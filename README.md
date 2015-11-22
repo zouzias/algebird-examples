@@ -11,6 +11,7 @@ Install [SBT](http://www.scala-sbt.org/), type
 
 ```
 git clone https://github.com/zouzias/algebird-examples.git
+cd algebird-examples/
 sbt run
 ```
 

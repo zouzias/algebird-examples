@@ -5,9 +5,9 @@ A few examples using Twitter's [Algebird](https://github.com/twitter/algebird) l
 Most examples are based on the [AliceInAggregatorLand.scala](https://gist.github.com/johnynek/814fc1e77aad1d295bb7)
 
 
-## Usage
+### Usage
 
-Install [SBT](http://www.scala-sbt.org/), typ
+Install [SBT](http://www.scala-sbt.org/), type
 
 ```
 git clone https://github.com/zouzias/algebird-examples.git

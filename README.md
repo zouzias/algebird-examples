@@ -20,9 +20,10 @@ You should see the following options:
 ```
 Multiple main classes detected, select one to run:
 
- [1] org.zouzias.algebird.examples.MomentsExample
- [2] org.zouzias.algebird.examples.TopKWordCounts
- [3] org.zouzias.algebird.examples.WordCountExample
-
+ [1] org.zouzias.algebird.examples.BloomFilterExample
+ [2] org.zouzias.algebird.examples.MomentsExample
+ [3] org.zouzias.algebird.examples.TopKWordCounts
+ [4] org.zouzias.algebird.examples.WordCountExample
+ 
 Enter number: 
 ```

@@ -8,7 +8,7 @@ import org.zouzias.algebird.examples.aggregators.WordCountAggregator
 object WordCountExample extends App {
 
   val alice = io.Source.fromFile("src/main/resources/alice.txt").getLines.toStream
-  val minThreshold : Int = 10
+  val minThreshold: Int = 10
 
   // flatMap on whitespace splits gives us a poor-folk's tokenizer (not suitable for
   // real work)

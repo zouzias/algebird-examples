@@ -3,7 +3,7 @@ package org.zouzias.algebird.examples
 import com.twitter.algebird.{BF, BloomFilterMonoid}
 
 /**
-  * Created by taazoan3 on 2016-01-11.
+  * Created by zouzias on 2016-01-11.
   */
 object BloomFilterReduceExample extends App {
 
@@ -17,7 +17,7 @@ object BloomFilterReduceExample extends App {
   val WIDTH = 32
   val SEED = 1
 
-  val bfMonoid = new BloomFilterMonoid(NUM_HASHES, WIDTH, SEED)
+  val bfMonoid = new BloomFilterMonoid[String](NUM_HASHES, WIDTH)
   val bf = createWordBloomFilter(aliceWords)
 
   /**
@@ -27,9 +27,9 @@ object BloomFilterReduceExample extends App {
     * @param words
     * @return
     */
-  def createWordBloomFilter(words: Seq[String]): BF = {
+  def createWordBloomFilter(words: Seq[String]): BF[String] = {
 
-    val bfs: Seq[BF] = words.map { word =>
+    val bfs: Seq[BF[String]] = words.map { case word =>
       bfMonoid.create(word)
     }
 
@@ -44,9 +44,9 @@ object BloomFilterReduceExample extends App {
     * @param words Words that exist in bf
     * @return Accuracy of BloomFilter
     */
-  def checkBFAccuracy(bf: BF, words: Seq[String]): Double = {
+  def checkBFAccuracy(bf: BF[String], words: Seq[String]): Double = {
     val total = words.length
-    val correct = words.filter(bf.contains(_).isTrue).length
+    val correct = words.count(bf.contains(_).isTrue)
 
     correct / total
   }

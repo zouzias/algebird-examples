@@ -21,7 +21,7 @@ object BloomFilterExample extends App {
   val WIDTH = 32
   val SEED = 1
 
-  val bfMonoid = new BloomFilterMonoid(NUM_HASHES, WIDTH, SEED)
+  val bfMonoid = new BloomFilterMonoid[String](NUM_HASHES, WIDTH)
   val bf = createWordBloomFilter(aliceWords)
 
   /**
@@ -31,7 +31,7 @@ object BloomFilterExample extends App {
     * @param words
     * @return
     */
-  def createWordBloomFilter(words: Seq[String]): BF = {
+  def createWordBloomFilter(words: Seq[String]): BF[String] = {
     var bf = bfMonoid.create()
     words.foreach { word =>
       bf = bf.+(word)
@@ -46,9 +46,9 @@ object BloomFilterExample extends App {
     * @param words Words that exist in bf
     * @return Accuracy of BloomFilter
     */
-  def checkBFAccuracy(bf: BF, words: Seq[String]): Double = {
+  def checkBFAccuracy(bf: BF[String], words: Seq[String]): Double = {
     val total = words.length
-    val correct = words.filter(bf.contains(_).isTrue).length
+    val correct = words.count(bf.contains(_).isTrue)
 
     correct / total
   }

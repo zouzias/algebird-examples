@@ -2,11 +2,11 @@ name := "algebird-examples"
 
 version := "1.0"
 
-scalaVersion := "2.11.12"
+scalaVersion := "2.13.16"
 
 resolvers ++= Seq(
-     "snapshots" at "http://oss.sonatype.org/content/repositories/snapshots",
-     "releases"  at "http://oss.sonatype.org/content/repositories/releases"
+     "snapshots" at "https://oss.sonatype.org/content/repositories/snapshots",
+     "releases"  at "https://oss.sonatype.org/content/repositories/releases"
    )
 
 scalacOptions ++= Seq(
@@ -15,14 +15,12 @@ scalacOptions ++= Seq(
   "-feature",
   "-unchecked",
   "-Xlint",
-  "-Ywarn-adapted-args",
   "-Ywarn-value-discard",
-  "-Ywarn-inaccessible",
   "-Ywarn-dead-code"
 )
 
 libraryDependencies ++= Seq(
-  "com.twitter" %% "algebird-core" % "0.13.5"
+  "com.twitter" %% "algebird-core" % "0.13.10"
 )
 
 licenses += ("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0.html"))

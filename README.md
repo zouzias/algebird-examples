@@ -1,4 +1,4 @@
-# algebird-examples [![Build Status](https://travis-ci.org/zouzias/algebird-examples.svg?branch=master)](https://travis-ci.org/zouzias/algebird-examples)
+# algebird-examples
 
 A few examples using Twitter's [Algebird](https://github.com/twitter/algebird) library.
 
